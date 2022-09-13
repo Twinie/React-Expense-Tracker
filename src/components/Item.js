@@ -1,6 +1,6 @@
 import { FaTimes } from "react-icons/fa";
 
-const Item = ({ task }) => {
+const Item = ({ task, onDelete }) => {
   return (
     <>
       <div className="expense-box">
@@ -9,7 +9,10 @@ const Item = ({ task }) => {
           <p>EXPENSE: {task.expense}</p>
         </div>
 
-        <FaTimes style={{ color: "red", cursor: "pointer" }} />
+        <FaTimes
+          style={{ color: "red", cursor: "pointer" }}
+          onClick={() => onDelete(task.id)}
+        />
       </div>
     </>
   );

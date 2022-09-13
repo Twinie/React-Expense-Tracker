@@ -22,13 +22,21 @@ function App() {
     };
 
     getTask();
-    // console.log(taskData);
   }, []);
+
+  const deleteTask = async (itemId) => {
+    await fetch(`http://localhost:5000/posts/${itemId}`, {
+      method: "DELETE",
+    });
+    const tasksCopy = [...tasks];
+    setTasks(tasksCopy.filter((task) => task.id !== itemId));
+    // console.log(tasksCopy);
+  };
 
   return (
     <div className="App">
       <Header />
-      <Items tasks={tasks} />
+      <Items tasks={tasks} onDelete={deleteTask} />
     </div>
   );
 }

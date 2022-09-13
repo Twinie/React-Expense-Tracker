@@ -1,21 +1,6 @@
 {
   "posts": [
     {
-      "id": 1,
-      "category": "Travel",
-      "expense": 1000
-    },
-    {
-      "id": 2,
-      "category": "Food",
-      "expense": 3000
-    },
-    {
-      "id": 3,
-      "category": "Bills",
-      "expense": 4000
-    },
-    {
       "id": 4,
       "category": "Education",
       "expense": 11000
@@ -31,5 +16,4 @@
       "expense": 5000
     }
   ]
-
 }

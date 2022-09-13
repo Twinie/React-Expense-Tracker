@@ -1,16 +1,16 @@
 import Item from "./Item";
 
-const Items = ({ tasks }) => {
+const Items = ({ tasks, onDelete }) => {
   let expense = 0;
   return (
     <div>
       {tasks.map((task) => (
-        <Item task={task} key={task.id}></Item>
+        <Item task={task} key={task.id} onDelete={onDelete}></Item>
       ))}
 
       <div className="expense-total">
         {tasks.forEach((element) => (expense += element.expense))}
-        TOTAL EXPENSE: {expense}
+        <h3>TOTAL EXPENSE: {expense}</h3>
       </div>
     </div>
   );
