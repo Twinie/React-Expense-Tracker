@@ -1,5 +1,6 @@
 import { FaTimes } from "react-icons/fa";
 
+//task assigned as props
 const Item = ({ task, onDelete }) => {
   return (
     <>
