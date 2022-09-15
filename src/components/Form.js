@@ -14,30 +14,38 @@ const Form = ({ onPost }) => {
     let Expense = parseInt(expense);
     onPost({ category, expense: Expense, presentDate });
   };
+  const buttonStyling = {
+    color: "white",
+    padding: "8px 30px",
+    backgroundColor: "green",
+    border: "none",
+    borderRadius: "4px",
+  };
   return (
-    <form onSubmit={handleSubmit} style={{ margin: "20px" }}>
+    <form className="form-mod" onSubmit={handleSubmit}>
       <label>
         Enter your Category:
+        <br />
         <input
           type="text"
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         />
       </label>
-      <br />
+
       <label>
         Enter Expense:
+        <br />
         <input
           type="number"
           defaultValue={expense}
           onChange={(e) => setExpense(e.target.value)}
         />
         INR
-        <br />
       </label>
       <label>Date: {presentDate}</label>
       <br />
-      <input type="submit" />
+      <input type="submit" style={buttonStyling} />
     </form>
   );
 };

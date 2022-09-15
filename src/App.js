@@ -6,6 +6,7 @@ import Items from "./components/Items";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [showForm, setShowForm] = useState(false);
 
   //fetch tasks
   const fetchTask = async () => {
@@ -16,7 +17,6 @@ function App() {
   };
 
   //get tasks
-
   useEffect(() => {
     const getTask = async () => {
       const taskFromServer = await fetchTask();
@@ -26,6 +26,7 @@ function App() {
     getTask();
   }, []);
 
+  //to delete a task
   const deleteTask = async (itemId) => {
     await fetch(`http://localhost:5000/posts/${itemId}`, {
       method: "DELETE",
@@ -34,6 +35,7 @@ function App() {
     setTasks(tasksCopy.filter((task) => task.id !== itemId));
   };
 
+  //to add a task
   const postTask = async (data) => {
     const res = await fetch(`http://localhost:5000/posts`, {
       method: "POST",
@@ -49,10 +51,16 @@ function App() {
     setTasks([...tasks, revertData]);
   };
 
+  //show form
+  const showForms = () => {
+    setShowForm(!showForm);
+  };
+
+  //to render(browser)
   return (
     <div className="App">
-      <Header />
-      <Form onPost={postTask} />
+      <Header onShow={showForms} isAddButton={!showForm} />
+      {showForm && <Form onPost={postTask} />}
       <Items tasks={tasks} onDelete={deleteTask} />
     </div>
   );

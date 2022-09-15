@@ -1,20 +1,21 @@
 {
   "posts": [
     {
-      "id": 3,
-      "category": "Travel",
-      "expense": 3000
-    },
-    {
       "id": 4,
       "category": "Education",
       "expense": 11000
     },
     {
-      "category": "misc",
-      "expense": 4000,
+      "category": "Food and Groceries",
+      "expense": 10000,
       "presentDate": "14/9/2022",
-      "id": 6
+      "id": 7
+    },
+    {
+      "category": "Travel",
+      "expense": 3000,
+      "presentDate": "15/9/2022",
+      "id": 8
     }
   ]
 }

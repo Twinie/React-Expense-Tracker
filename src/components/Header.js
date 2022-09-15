@@ -1,10 +1,14 @@
 import Button from "./Button";
 
-const Header = () => {
+const Header = ({ onShow, isAddButton }) => {
   return (
     <div className="header">
       <h2>EXPENSE TRACKER</h2>
-      <Button />
+      <Button
+        onShow={onShow}
+        isAddButton={isAddButton}
+        color={isAddButton ? "green" : "red"}
+      />
     </div>
   );
 };
