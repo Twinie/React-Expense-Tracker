@@ -9,10 +9,16 @@ const Form = ({ onPost }) => {
     d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear();
   const handleSubmit = (event) => {
     event.preventDefault();
+
     // the object that has been posted actually gets converted to ^
     // ^ string which curbs to add the number so expense is converted to number and assigned to its key.
     let Expense = parseInt(expense);
-    onPost({ category, expense: Expense, presentDate });
+
+    {
+      category === ""
+        ? alert("Please fill up the Expenses!!")
+        : onPost({ category, expense: Expense, presentDate });
+    }
   };
   const buttonStyling = {
     color: "white",

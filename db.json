@@ -16,6 +16,18 @@
       "expense": 3000,
       "presentDate": "15/9/2022",
       "id": 8
+    },
+    {
+      "category": "travel",
+      "expense": 200,
+      "presentDate": "15/9/2022",
+      "id": 9
+    },
+    {
+      "category": "Travel",
+      "expense": 3000,
+      "presentDate": "15/9/2022",
+      "id": 10
     }
   ]
 }
