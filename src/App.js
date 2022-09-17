@@ -3,9 +3,11 @@ import "./App.css";
 import Header from "./components/Header";
 import Form from "./components/Form";
 import Items from "./components/Items";
+import Dropdown from "./components/Dropdown";
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [filteredTasks, setFilteredTasks] = useState([]);
   const [showForm, setShowForm] = useState(false);
 
   //fetch tasks
@@ -56,12 +58,20 @@ function App() {
     setShowForm(!showForm);
   };
 
+  //to check the category in dropdown
+  const categoryCheck = (evt) => {
+    let value = evt.target.value;
+    let categoryCheckTasks = tasks.filter((task) => task.category === value);
+    setFilteredTasks(categoryCheckTasks);
+  };
+
   //to render(browser)
   return (
     <div className="App">
       <Header onShow={showForms} isAddButton={!showForm} />
       {showForm && <Form onPost={postTask} />}
-      <Items tasks={tasks} onDelete={deleteTask} />
+      <Dropdown categoryCheck={categoryCheck} />
+      <Items tasks={filteredTasks} onDelete={deleteTask} />
     </div>
   );
 }

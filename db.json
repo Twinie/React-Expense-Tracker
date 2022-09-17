@@ -1,12 +1,7 @@
 {
   "posts": [
     {
-      "id": 4,
-      "category": "Education",
-      "expense": 11000
-    },
-    {
-      "category": "Food and Groceries",
+      "category": "Food & Groceries",
       "expense": 10000,
       "presentDate": "14/9/2022",
       "id": 7
@@ -18,15 +13,15 @@
       "id": 8
     },
     {
-      "category": "travel",
-      "expense": 200,
-      "presentDate": "15/9/2022",
+      "category": "Travel",
+      "expense": 2000,
+      "presentDate": "17/9/2022",
       "id": 9
     },
     {
-      "category": "Travel",
-      "expense": 3000,
-      "presentDate": "15/9/2022",
+      "category": "Education",
+      "expense": 11000,
+      "presentDate": "17/9/2022",
       "id": 10
     }
   ]
